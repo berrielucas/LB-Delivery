@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&family=Poppins:wght@100;200;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="/script.js" defer></script>
+    <title>LB Delivery</title>
+</head>
+<body class="home">
+    <aside>
+        <div class="logo-marca">
+            <h1>LB Delivery</h1>
+        </div>
+        <div class="menu-lateral">
+            <ul>
+                <li class="menu-home">
+                    <span><i class="fa-solid fa-house"></i></span>
+                    <p>Home</p>
+                </li>
+                <li class="menu-fav">
+                    <span><i class="fa-solid fa-star"></i></span>
+                    <p>Favorite</p>
+                </li>
+                <li class="menu-message">
+                    <span><i class="fa-solid fa-comments"></i></span>
+                    <p>Message</p>
+                </li>
+                <li class="menu-hist"> 
+                    <span><i class="fa-solid fa-clock-rotate-left"></i></span>
+                    <p>History</p>
+                </li>
+                <li class="menu-set">
+                    <span><i class="fa-solid fa-gears"></i></span>
+                    <p>Setting</p>
+                </li>
+            </ul>
+        </div>
+        <div class="upgrade">
+            <img src="./assets/upgrade-banner.png" alt="Upgrade Now">
+        </div>
+    </aside>
+
+    <main>
+        <div class="topo">
+            <h1>Hello, Lucas</h1>
+            <div class="form-pesq">
+                <input type="text" name="pesq" id="pesq" placeholder="What do you want to eat today?">
+                <button>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="banner">
+            <img src="./assets/banner.png">
+        </div>
+
+        <div class="tit">
+            <h2>Category</h2>
+            <p>View ALL ></p>
+        </div>
+
+        <div class="category">
+            <div class="cat-item">
+                <img width="48" height="48" src="https://img.icons8.com/color/48/hamburger.png" alt="hamburger"/>
+                <p>Burger</p>
+            </div>
+            <div class="cat-item">
+                <img width="48" height="48" src="https://img.icons8.com/color/48/pizza.png" alt="pizza"/>
+                <p>Pizza</p>
+            </div>
+            <div class="cat-item">
+                <img width="48" height="48" src="https://img.icons8.com/color/48/french-fries.png" alt="french-fries"/>
+                <p>Fries</p>
+            </div>
+            <div class="cat-item">
+                <img width="48" height="48" src="https://img.icons8.com/color/48/hamper.png" alt="hamper"/>
+                <p>Shopping</p>
+            </div>
+            <div class="cat-item">
+                <img width="48" height="48" src="https://img.icons8.com/color/48/orange-juice.png" alt="orange-juice"/>
+                <p>Drink</p>
+            </div>
+            <div class="cat-item">
+                <img width="48" height="48" src="https://img.icons8.com/color/48/doughnut.png" alt="doughnut"/>
+                <p>Candy</p>
+            </div>
+        </div>
+
+        <div class="tit">
+            <h2>Popular Dishes</h2>
+            <p>View ALL ></p>
+        </div>
+
+        <div class="popular"></div>
+
+        <div class="tit">
+            <h2>Recent Order</h2>
+            <p>View ALL ></p>
+        </div>
+
+        <div class="recent"></div>
+    </main>
+
+    <div class="profile-car">
+
+        <div class="profile">
+            <div class="icons">
+                <span><i class="fa-regular fa-comments"></i><p>•</p></span>
+                <span><i class="fa-regular fa-bell"></i><p>•</p></span>
+                <span><i class="fa-solid fa-gears"></i></span>
+            </div>
+            <div class="avatar">
+                <img src="./assets/avatar.png" alt="profile">
+            </div>
+        </div>
+
+        <h2>Your Balance</h2>
+
+        <div class="balance">
+            <div class="credit">
+                <p>Credit</p>
+                <p class="cred-valor">$200.00</p>
+            </div>
+            <div class="credit-add">
+                <span><i class="fa-solid fa-money-bill-transfer"></i></span>
+                <p>Add credits</p>
+            </div>
+        </div>
+
+        <h2>Your Address</h2>
+
+        <div class="address">
+            <div class="end">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>San Francisco, 50</p>
+            </div>
+            <div class="change">
+                <p>Change</p>
+            </div>
+        </div>
+
+        <h2>Order Menu</h2>
+
+        <div class="note">
+            <div class="order">
+                <div class="nenhum">
+                    <p>No items in order</p>
+                </div>
+            </div>
+            <hr>
+            <div class="total-taxa">
+                <div class="taxa">
+                    <p>Service</p>
+                    <p class="valor-taxa">+<b>$</b><span>0.00</span></p>
+                </div>
+                <div class="total">
+                    <p>Total</p>
+                    <p class="valor-total"><b>$</b><span>0.00</span></p>
+                </div>
+            </div>
+        </div>
+
+        <button class="cupom">
+            <span><i class="fa-solid fa-ticket"></i></span>
+            <input type="text" id="cupom" name="cupom" placeholder="Have a coupon code?">
+        </button>
+
+
+        <button class="check">Checkout</button>
+    </div>
+</body>
+</html>

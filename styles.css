@@ -610,7 +610,7 @@ main::-webkit-scrollbar-track {
   gap: 0.5rem;
 }
 
-.discount, .taxa, .total{
+.taxa, .total{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -623,6 +623,8 @@ main::-webkit-scrollbar-track {
 
 .discount{
   display: none;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .valor-taxa{

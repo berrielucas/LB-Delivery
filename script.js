@@ -1,9 +1,13 @@
 const conteinerPromo = document.querySelector('.popular');
 const containerPrato = document.querySelector('.recent');
 const containerPedido = document.querySelector('.order');
+const containerNota = document.querySelector('.note');
 const nenhumItem = document.querySelector('.nenhum');
+const section = document.querySelector('.feedbacks');
+const labelDicount = document.querySelector('.discount');
 let valorTaxa = document.querySelector('.taxa').querySelector('span');
 let valorTotal = document.querySelector('.valor-total').querySelector('span');
+const containerPay = document.querySelector('.pay');
 
 
 let listaPromo = [
@@ -243,4 +247,75 @@ buttons_fav.forEach(function(button_fav) {
             this.style.color = '#ff3f3f';
         }
     });
+});
+
+
+const btn_pay = document.querySelector('.check');
+
+btn_pay.addEventListener('click', function(){
+    const cupom = document.querySelector('#cupom').value;
+    const labelErro = document.querySelector('.erro');
+    if (cupom.length>0&&cupom!='ILucas'){
+        labelErro.style.display = 'flex';
+    }else{
+        containerPay.classList.add('active');
+        labelErro.style.display = 'none';
+        const containerPayOrder = document.querySelector('.pay').querySelector('.order');
+        const containerTotalTaxa = document.querySelector('.pay').querySelector('.total-taxa');
+    
+        let total_taxa = document.querySelector('.note').querySelector('.total-taxa');
+    
+        console.log(cupom.length);
+    
+        for (i=0; i<listPedido.length; i++){
+            containerPayOrder.appendChild(listPedido[i]);
+        }
+    
+        containerTotalTaxa.appendChild(total_taxa);
+        
+        
+    
+        if (cupom == "ILucas"){
+            let valorTotalPay = document.querySelector('.pay').querySelector('.total-taxa').querySelector('.valor-total').querySelector('span');
+            let valorDiscoutPay = document.querySelector('.pay').querySelector('.total-taxa').querySelector('.valor-discount').querySelector('span');
+            let valTotal = parseFloat(valorTotalPay.textContent);
+            console.log(valTotal);
+            let valor_discount = valTotal*0.5;
+            console.log(valor_discount);
+            valTotal = valTotal-valor_discount;
+            valorTotalPay.innerHTML = "<span>"+valTotal.toFixed(2)+"</span>";
+            valorDiscoutPay.innerHTML = "<span>"+valor_discount.toFixed(2)+"</span>";
+        }
+
+        labelDicount.style.display = 'flex';
+    
+        section.style.display = 'flex';
+
+        
+    }
+    
+});
+
+const btn_fechar = document.querySelector('.fa-xmark');
+
+btn_fechar.addEventListener('click', function(){
+    containerPay.classList.remove('active');
+    section.style.display = 'none';
+    labelDicount.style.display = 'none';
+
+    listPedido = document.querySelector('.pay').querySelectorAll('.order-item');
+    let total_taxa = document.querySelector('.pay').querySelector('.total-taxa').querySelector('.total-taxa');
+
+    if (listPedido.length == 0){
+        nenhumItem.style.display = 'flex';
+    }
+
+    for (i=0; i<listPedido.length; i++){
+        containerPedido.appendChild(listPedido[i]);
+    }
+
+    containerNota.appendChild(total_taxa);
+
+    listPedido = document.querySelector('.note').querySelectorAll('.order-item');
+
 });

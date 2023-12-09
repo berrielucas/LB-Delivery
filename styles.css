@@ -6,6 +6,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  position: relative;
 }
 
 h2{
@@ -20,7 +21,7 @@ h1{
 aside {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 2rem 1rem 1rem;
   width: 16%;
   align-items: center;
   position: fixed;
@@ -182,6 +183,12 @@ main::-webkit-scrollbar-track {
   border-radius: 15px;
   width: 100%;
   cursor: pointer;
+}
+
+.banner img:hover{
+  cursor: pointer;
+  box-shadow: 0px 0 20px rgba(127, 127, 127, 0.584);
+  transition: 0.25s;
 }
 
 .tit {
@@ -381,6 +388,11 @@ main::-webkit-scrollbar-track {
   position: relative;
   border-radius: 8px;
   cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.icons span:hover{
+  background-color: #ebebeb;
 }
 
 .icons span p{
@@ -480,6 +492,11 @@ main::-webkit-scrollbar-track {
   padding: 0.3rem 0.5rem;
   border-radius: 10px;
   cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.change:hover{
+  background-color: #ebebeb;
 }
 
 .note{
@@ -526,7 +543,6 @@ main::-webkit-scrollbar-track {
   justify-content: space-between;
   padding: 0.5rem 1rem;
   transition: all 0.1s ease-in-out;
-  /* cursor: pointer; */
 }
 
 .content-item{
@@ -594,15 +610,19 @@ main::-webkit-scrollbar-track {
   gap: 0.5rem;
 }
 
-.taxa, .total{
+.discount, .taxa, .total{
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.taxa{
+.discount, .taxa{
   font-size: 14px;
   color: #5c5c5c;
+}
+
+.discount{
+  display: none;
 }
 
 .valor-taxa{
@@ -637,6 +657,13 @@ main::-webkit-scrollbar-track {
   border: none;
 }
 
+.erro{
+  display: none;
+  font-size: 13px;
+  margin-left: 0.5rem;
+  color: red;
+}
+
 .check{
   display: flex;
   background-color: #ffb800;
@@ -649,9 +676,136 @@ main::-webkit-scrollbar-track {
   font-size: 17px;
 }
 
-.check:hover{
-  /* background-color: #efb319; */
+.btn-pay:hover, .check:hover{
   cursor: pointer;
-  box-shadow: 0px 0 8px rgba(127, 127, 127, 0.584);
+  box-shadow: 0px 0 8px rgba(96, 96, 96, 0.721);
   transition: 0.09s;
+}
+
+
+
+/* Área Feedback */
+
+.feedbacks {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #0b0b0bc6;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.pay{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+  width: 30%;
+  max-height: 75vh;
+  padding: 0 0.5rem;
+  gap: 0.3rem;
+}
+
+.pay .top{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0.5rem;
+}
+
+.pay h2{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.pay .top span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.pay .order{
+  height: auto;
+  max-height: 40%;
+}
+
+.pay .total-taxa{
+  padding: 0.3rem 0.8rem;
+  gap: 0.1rem;
+}
+
+.pay .order-item:hover .trash{
+  display: none;
+}
+
+.payment{
+  display: flex;
+  flex-direction: column;
+  max-height: 40%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.payment::-webkit-scrollbar {
+  width: 5px;
+}
+  
+.payment::-webkit-scrollbar-thumb {
+  background-color: #dddddd;
+  border-radius: 6px;
+}
+  
+.payment::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.payment-item{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.8rem;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.1s ease;
+  gap: 1rem;
+  color: #5c5c5c;
+}
+
+.payment-item i{
+  font-size: 20px;
+}
+
+.payment-item input{
+  display: flex;
+  position: absolute;
+  right: 0.8rem;
+}
+
+.payment-item:hover{
+  background-color: #ebebeb;
+}
+
+.btn-pay{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  width: 80%;
+  margin: 1rem auto;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: #ffb800;
+  color: white;
+  font-size: 18px;
 }

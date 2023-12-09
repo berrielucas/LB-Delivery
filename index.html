@@ -158,6 +158,10 @@
                     <p>Service</p>
                     <p class="valor-taxa">+<b>$</b><span>0.00</span></p>
                 </div>
+                <div class="discount">
+                    <p>Discount</p>
+                    <p class="valor-discount">-<b>$</b><span>0.00</span></p>
+                </div>
                 <div class="total">
                     <p>Total</p>
                     <p class="valor-total"><b>$</b><span>0.00</span></p>
@@ -170,9 +174,47 @@
             <input type="text" id="cupom" name="cupom" placeholder="Have a coupon code?">
         </button>
 
+        <p class="erro">Invalid Coupon!</p>
+
 
         <button class="check">Checkout</button>
     </div>
+
+    <section class="feedbacks">
+        <div class="pay">
+            <div class="top">
+                <h2>Order Summary</h2>
+                <span><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <div class="order"></div>
+            <hr>
+            <div class="total-taxa"></div>
+            <div class="payment">
+                <div class="payment-item">
+                    <i class="fa-brands fa-pix"></i>
+                    <p>Pix</p>
+                    <input type="radio" name="type-pay" id="type-pay">
+                </div>
+                <div class="payment-item">
+                    <i class="fa-brands fa-google-pay"></i>
+                    <p>Google Pay</p>
+                    <input type="radio" name="type-pay" id="type-pay">
+                </div>
+                <div class="payment-item">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <p>Visa • Credit Card</p>
+                    <input type="radio" name="type-pay" id="type-pay">
+                </div>
+                <div class="payment-item">
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <p>Mastercard • Credit Card</p>
+                    <input type="radio" name="type-pay" id="type-pay">
+                </div>
+            </div>
+            <button class="btn-pay">Buy Order</button>
+            
+        </div>
+    </section>
 
     <script src="https://berrielucas.github.io/LB-Delivery/script.js"></script>
 </body>

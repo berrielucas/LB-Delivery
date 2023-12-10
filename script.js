@@ -8,7 +8,7 @@ const labelDicount = document.querySelector('.discount');
 let valorTaxa = document.querySelector('.taxa').querySelector('span');
 let valorTotal = document.querySelector('.valor-total').querySelector('span');
 const containerPay = document.querySelector('.pay');
-
+let desconto = false;
 
 let listaPromo = [
     {'nome':'Big Burger', 'preco':15.90, 'img':'./assets/burger1.png'},
@@ -41,7 +41,6 @@ for (i=0; i < listaPrato.length; i++){
 
 
 let listPedido = document.querySelectorAll('.order-item');
-
 
 
 let buttons_promo = document.querySelectorAll('.promo-add');
@@ -93,15 +92,12 @@ buttons_promo.forEach(function(button_promo) {
         if (listPedido.length == 1 && listPedido[0].getAttribute('data-dado')=='1'){
             valorTaxa.innerHTML = "1.00";
             valor_add = valor_add + 1;
-            console.log(true);
         }
 
 
         let valTotal = parseFloat(valorTotal.textContent);
         valTotal = valTotal+valor_add;
         valorTotal.innerHTML = "<span>"+valTotal.toFixed(2)+"</span>";
-
-        console.log(valorTaxa)
 
         atualizar();
 
@@ -160,7 +156,6 @@ buttons_prato.forEach(function(button_prato) {
         if (listPedido.length == 1 && listPedido[0].getAttribute('data-dado')=='1'){
             valorTaxa.innerHTML = "1.00";
             valor_add = valor_add + 1;
-            console.log(true);
         }
 
 
@@ -186,16 +181,12 @@ function atualizar(){
 
             const classes = item.getAttribute('class');
 
-            console.log(item);
-
             let valor_del = 0;
             for (i=0; i < listPedido.length; i++){
                 if (classes == listPedido[i].getAttribute('class') && id == listPedido[i].getAttribute('id')){
                     const quant = parseInt(listPedido[i].getAttribute('data-dado'));
                     valor_del = parseFloat(listPedido[i].querySelector('.valor-final-item').querySelector('span').textContent);
                     if (quant > 1){
-        
-                        console.log(true);
         
                         const quant_nova = quant-1;
         
@@ -212,7 +203,6 @@ function atualizar(){
             
                         listPedido[i].setAttribute('data-dado', quant_nova);
                     }else{
-                        console.log(false);
                         containerPedido.removeChild(listPedido[i]);
                     }
                     break;
@@ -265,7 +255,6 @@ btn_pay.addEventListener('click', function(){
     
         let total_taxa = document.querySelector('.note').querySelector('.total-taxa');
     
-        console.log(cupom.length);
     
         for (i=0; i<listPedido.length; i++){
             containerPayOrder.appendChild(listPedido[i]);
@@ -276,12 +265,11 @@ btn_pay.addEventListener('click', function(){
         
     
         if (cupom == "ILucas"){
+            desconto = true;
             let valorTotalPay = document.querySelector('.pay').querySelector('.total-taxa').querySelector('.valor-total').querySelector('span');
             let valorDiscoutPay = document.querySelector('.pay').querySelector('.total-taxa').querySelector('.valor-discount').querySelector('span');
             let valTotal = parseFloat(valorTotalPay.textContent);
-            console.log(valTotal);
             let valor_discount = valTotal*0.5;
-            console.log(valor_discount);
             valTotal = valTotal-valor_discount;
             valorTotalPay.innerHTML = "<span>"+valTotal.toFixed(2)+"</span>";
             valorDiscoutPay.innerHTML = "<span>"+valor_discount.toFixed(2)+"</span>";
@@ -290,8 +278,6 @@ btn_pay.addEventListener('click', function(){
         labelDicount.style.display = 'flex';
     
         section.style.display = 'flex';
-
-        
     }
     
 });
@@ -316,6 +302,12 @@ btn_fechar.addEventListener('click', function(){
 
     containerNota.appendChild(total_taxa);
 
-    listPedido = document.querySelector('.note').querySelectorAll('.order-item');
+    if (desconto == true) {
+        const campo = containerNota.querySelector('.total-taxa').querySelector('.valor-total').querySelector('span');
+        let v = parseFloat(campo.textContent)*2;
+        campo.innerText = v.toFixed(2);
+        desconto = false;
+    }
 
+    listPedido = document.querySelector('.note').querySelectorAll('.order-item');
 });

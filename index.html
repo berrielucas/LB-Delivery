@@ -46,7 +46,16 @@
 
     <main>
         <div class="topo">
-            <h1>Hello, Lucas</h1>
+            <div class="topo-mobile">
+                <h1>Hello, Lucas</h1>
+                <span id="abrir-car">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p>0</p>
+                </span>
+                <div class="avatar-mobile">
+                    <img src="./assets/avatar.png" alt="profile">
+                </div>
+            </div>
             <div class="form-pesq">
                 <input type="text" name="pesq" id="pesq" placeholder="What do you want to eat today?">
                 <button>
@@ -64,31 +73,34 @@
             <p>View ALL ></p>
         </div>
 
-        <div class="category">
-            <div class="cat-item">
-                <img width="48" height="48" src="https://img.icons8.com/color/48/hamburger.png" alt="hamburger"/>
-                <p>Burger</p>
-            </div>
-            <div class="cat-item">
-                <img width="48" height="48" src="https://img.icons8.com/color/48/pizza.png" alt="pizza"/>
-                <p>Pizza</p>
-            </div>
-            <div class="cat-item">
-                <img width="48" height="48" src="https://img.icons8.com/color/48/french-fries.png" alt="french-fries"/>
-                <p>Fries</p>
-            </div>
-            <div class="cat-item">
-                <img width="48" height="48" src="https://img.icons8.com/color/48/hamper.png" alt="hamper"/>
-                <p>Shopping</p>
-            </div>
-            <div class="cat-item">
-                <img width="48" height="48" src="https://img.icons8.com/color/48/orange-juice.png" alt="orange-juice"/>
-                <p>Drink</p>
-            </div>
-            <div class="cat-item">
-                <img width="48" height="48" src="https://img.icons8.com/color/48/doughnut.png" alt="doughnut"/>
-                <p>Candy</p>
-            </div>
+
+        <div class="scroll-box-mobile-cat">
+            <section class="category">
+                <div class="cat-item">
+                    <img src="https://img.icons8.com/color/48/hamburger.png" alt="hamburger"/>
+                    <p>Burger</p>
+                </div>
+                <div class="cat-item">
+                    <img src="https://img.icons8.com/color/48/pizza.png" alt="pizza"/>
+                    <p>Pizza</p>
+                </div>
+                <div class="cat-item">
+                    <img src="https://img.icons8.com/color/48/french-fries.png" alt="french-fries"/>
+                    <p>Fries</p>
+                </div>
+                <div class="cat-item">
+                    <img src="https://img.icons8.com/color/48/hamper.png" alt="hamper"/>
+                    <p>Shopping</p>
+                </div>
+                <div class="cat-item">
+                    <img src="https://img.icons8.com/color/48/orange-juice.png" alt="orange-juice"/>
+                    <p>Drink</p>
+                </div>
+                <div class="cat-item">
+                    <img src="https://img.icons8.com/color/48/doughnut.png" alt="doughnut"/>
+                    <p>Candy</p>
+                </div>
+            </section>
         </div>
 
         <div class="tit">
@@ -96,19 +108,27 @@
             <p>View ALL ></p>
         </div>
 
-        <div class="popular"></div>
+        <div class="scroll-box-mobile">
+            <div class="popular"></div>
+        </div>
 
         <div class="tit">
             <h2>Recent Order</h2>
             <p>View ALL ></p>
         </div>
 
-        <div class="recent"></div>
+        <div class="scroll-box-mobile">
+            <div class="recent"></div>
+        </div>
+
     </main>
 
     <div class="profile-car">
 
         <div class="profile">
+            <span id="back-home">
+                <i class="fa-solid fa-arrow-left"></i>
+            </span>
             <div class="icons">
                 <span><i class="fa-regular fa-comments"></i><p>•</p></span>
                 <span><i class="fa-regular fa-bell"></i><p>•</p></span>
@@ -184,7 +204,7 @@
         <div class="pay">
             <div class="top">
                 <h2>Order Summary</h2>
-                <span><i class="fa-solid fa-xmark"></i></span>
+                <span><i class="fa-solid fa-xmark" id="fechar-pay"></i></span>
             </div>
             <div class="order"></div>
             <hr>
@@ -215,8 +235,7 @@
             
         </div>
     </section>
-
-<!--     <script src="https://berrielucas.github.io/LB-Delivery/script.js"></script> -->
+    <!-- <script src="https://berrielucas.github.io/LB-Delivery/script.js"></script> -->
     <script src="script.js"></script>
 </body>
 </html>

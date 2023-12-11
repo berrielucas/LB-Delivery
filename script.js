@@ -1,3 +1,15 @@
+const documento = document.querySelector('body');
+function isMobile() {
+    return window.innerWidth <= 720;
+}
+
+if (isMobile()) {
+    documento.classList.add('mobile');
+} else {
+    documento.classList.add('desktop');
+}
+
+
 const conteinerPromo = document.querySelector('.popular');
 const containerPrato = document.querySelector('.recent');
 const containerPedido = document.querySelector('.order');
@@ -9,6 +21,7 @@ let valorTaxa = document.querySelector('.taxa').querySelector('span');
 let valorTotal = document.querySelector('.valor-total').querySelector('span');
 const containerPay = document.querySelector('.pay');
 let desconto = false;
+const contador = document.querySelector('#abrir-car').querySelector('p');
 
 let listaPromo = [
     {'nome':'Big Burger', 'preco':15.90, 'img':'./assets/burger1.png'},
@@ -41,6 +54,7 @@ for (i=0; i < listaPrato.length; i++){
 
 
 let listPedido = document.querySelectorAll('.order-item');
+
 
 
 let buttons_promo = document.querySelectorAll('.promo-add');
@@ -100,6 +114,17 @@ buttons_promo.forEach(function(button_promo) {
         valorTotal.innerHTML = "<span>"+valTotal.toFixed(2)+"</span>";
 
         atualizar();
+
+        if (listPedido.length > 0){
+            let cont = 0;
+            for (i=0; i < listPedido.length; i++){
+                cont = cont + parseInt(listPedido[i].getAttribute('data-dado'))
+            }
+            contador.innerText = cont;
+            contador.style.display = 'flex';
+        }else{
+            contador.style.display = 'none';
+        }
 
     });
 });
@@ -165,6 +190,17 @@ buttons_prato.forEach(function(button_prato) {
 
         atualizar();
 
+        if (listPedido.length > 0){
+            let cont = 0;
+            for (i=0; i < listPedido.length; i++){
+                cont = cont + parseInt(listPedido[i].getAttribute('data-dado'))
+            }
+            contador.innerText = cont;
+            contador.style.display = 'flex';
+        }else{
+            contador.style.display = 'none';
+        }
+
     });
 });
 
@@ -222,6 +258,17 @@ function atualizar(){
                 valTotal = valTotal-valor_del;
                 valorTotal.innerHTML = "<span>"+valTotal.toFixed(2)+"</span>";
             }
+
+            if (listPedido.length > 0){
+                let cont = 0;
+                for (i=0; i < listPedido.length; i++){
+                    cont = cont + parseInt(listPedido[i].getAttribute('data-dado'))
+                }
+                contador.innerText = cont;
+                contador.style.display = 'flex';
+            }else{
+                contador.style.display = 'none';
+            }
         });
     });
 }
@@ -245,7 +292,7 @@ const btn_pay = document.querySelector('.check');
 btn_pay.addEventListener('click', function(){
     const cupom = document.querySelector('#cupom').value;
     const labelErro = document.querySelector('.erro');
-    if (cupom.length>0&&cupom!='LBOFF50'){
+    if (cupom.length>0&&cupom!='ILucas'){
         labelErro.style.display = 'flex';
     }else{
         containerPay.classList.add('active');
@@ -264,7 +311,7 @@ btn_pay.addEventListener('click', function(){
         
         
     
-        if (cupom == "LBOFF50"){
+        if (cupom == "ILucas"){
             desconto = true;
             let valorTotalPay = document.querySelector('.pay').querySelector('.total-taxa').querySelector('.valor-total').querySelector('span');
             let valorDiscoutPay = document.querySelector('.pay').querySelector('.total-taxa').querySelector('.valor-discount').querySelector('span');
@@ -282,7 +329,7 @@ btn_pay.addEventListener('click', function(){
     
 });
 
-const btn_fechar = document.querySelector('.fa-xmark');
+const btn_fechar = document.querySelector('#fechar-pay');
 
 btn_fechar.addEventListener('click', function(){
     containerPay.classList.remove('active');
@@ -310,4 +357,21 @@ btn_fechar.addEventListener('click', function(){
     }
 
     listPedido = document.querySelector('.note').querySelectorAll('.order-item');
+});
+
+
+
+
+const carrinho = document.querySelector('.profile-car');
+
+const btn_abrir_car = document.querySelector('#abrir-car');
+
+btn_abrir_car.addEventListener('click', function(){
+    carrinho.style.display = 'flex';
+});
+
+const btn_fechar_car = document.querySelector('#back-home');
+
+btn_fechar_car.addEventListener('click', function(){
+    carrinho.style.display = 'none';
 });

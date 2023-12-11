@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -49,7 +50,7 @@ aside {
   transition: background 0.1s ease-in-out;
 }
 
-.menu-lateral li:hover{
+.desktop .menu-lateral li:hover{
   background-color: #ebebeb;
 }
 
@@ -58,45 +59,45 @@ aside {
   color: white;
 }
 
-.home .menu-home:hover{
+/* .desktop .home .menu-home:hover{
   background-color: #e6a602;
-}
+} */
 
 .favorite .menu-fav{
   background-color: #ffb800;
   color: white;
 }
 
-.favorite .menu-fav:hover{
+/* .desktop .favorite .menu-fav:hover{
   background-color: #e6a602;
-}
+} */
 
 .message .menu-message{
   background-color: #ffb800;
   color: white;
 }
 
-.message .menu-message:hover{
+/* .desktop .message .menu-message:hover{
   background-color: #e6a602;
-}
+} */
 
 .history .menu-hist{
   background-color: #ffb800;
   color: white;
 }
 
-.history .menu-hist:hover{
+/* .desktop .history .menu-hist:hover{
   background-color: #e6a602;
-}
+} */
 
 .setting .menu-set{
   background-color: #ffb800;
   color: white;
 }
 
-.setting .menu-set:hover{
+/* .desktop .setting .menu-set:hover{
   background-color: #e6a602;
-}
+} */
 
 .menu-lateral li span {
   display: flex;
@@ -146,18 +147,27 @@ main::-webkit-scrollbar-track {
   justify-content: space-between;
 }
 
+#abrir-car{
+  display: none;
+}
+
+.avatar-mobile{
+  display: none;
+}
+
 .form-pesq {
   display: flex;
   float: left;
   border-radius: 20px;
   overflow: hidden;
+  width: 300px;
 }
 
 .form-pesq input {
   border: none;
   padding: 0.5rem 1rem;
   outline: none;
-  width: 270px;
+  width: 88%;
 }
 
 .form-pesq button {
@@ -166,7 +176,7 @@ main::-webkit-scrollbar-track {
   justify-content: center;
   border: none;
   padding: 0.5rem;
-  width: 40px;
+  width: 12%;
   background: white;
   color: #ffb800;
   font-size: 17px;
@@ -174,7 +184,7 @@ main::-webkit-scrollbar-track {
   transition: all 0.1s ease;
 }
 
-.form-pesq button:hover{
+.desktop .form-pesq button:hover{
   background-color: #f5ce6d;
   color: white;
 }
@@ -185,7 +195,7 @@ main::-webkit-scrollbar-track {
   cursor: pointer;
 }
 
-.banner img:hover{
+.desktop .banner img:hover{
   cursor: pointer;
   box-shadow: 0px 0 20px rgba(127, 127, 127, 0.584);
   transition: 0.25s;
@@ -226,7 +236,12 @@ main::-webkit-scrollbar-track {
   gap: 10px;
 }
 
-.cat-item:hover{
+.cat-item img{
+  width: 48px;
+  height: 48px;
+}
+
+.desktop .cat-item:hover{
   cursor: pointer;
   box-shadow: 0px 0 11px rgba(127, 127, 127, 0.584);
   transition: 0.25s;
@@ -244,14 +259,14 @@ main::-webkit-scrollbar-track {
   flex-direction: column;
   justify-content: space-between;
   width: 250px;
-  height: 280px;
+  height: auto;
   padding: 1rem;
   border-radius: 15px;
   position: relative;
   background-color: white;
 }
 
-.item:hover{
+.desktop .item:hover{
   cursor: pointer;
   box-shadow: 0px 0 11px rgba(127, 127, 127, 0.584);
   transition: 0.25s;
@@ -267,7 +282,7 @@ main::-webkit-scrollbar-track {
   justify-content: center;
   margin: auto;
   width: 200px;
-  height: 200px;
+  height: 180px;
   padding: 1rem;
 }
 
@@ -307,7 +322,7 @@ main::-webkit-scrollbar-track {
   color: white;
 }
 
-.add:hover{
+.desktop .add:hover{
     background-color: #e6a602;
 }
 
@@ -391,7 +406,17 @@ main::-webkit-scrollbar-track {
   transition: background 0.1s ease;
 }
 
-.icons span:hover{
+#back-home{
+  display: none;
+  width: 35px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 21px;
+}
+
+.desktop .icons span:hover{
   background-color: #ebebeb;
 }
 
@@ -447,7 +472,7 @@ main::-webkit-scrollbar-track {
   transition: background 0.1s ease;
 }
 
-.credit-add:hover{
+.desktop .credit-add:hover{
   background-color: #b07e00;
   /* opacity: 0.3; */
 }
@@ -495,7 +520,7 @@ main::-webkit-scrollbar-track {
   transition: background 0.1s ease;
 }
 
-.change:hover{
+.desktop .change:hover{
   background-color: #ebebeb;
 }
 
@@ -586,7 +611,7 @@ main::-webkit-scrollbar-track {
   font-weight: 600;
 }
 
-.order-item:hover{
+.desktop .order-item:hover{
   background-color: #ebebeb;
 }
 
@@ -598,7 +623,7 @@ main::-webkit-scrollbar-track {
   cursor: pointer;
 }
 
-.order-item:hover .trash{
+.desktop .order-item:hover .trash{
   display: flex;
 }
 
@@ -610,7 +635,7 @@ main::-webkit-scrollbar-track {
   gap: 0.5rem;
 }
 
-.taxa, .total{
+.discount, .taxa, .total{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -623,8 +648,6 @@ main::-webkit-scrollbar-track {
 
 .discount{
   display: none;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .valor-taxa{
@@ -678,10 +701,14 @@ main::-webkit-scrollbar-track {
   font-size: 17px;
 }
 
-.btn-pay:hover, .check:hover{
+.desktop .btn-pay:hover, .desktop .check:hover{
   cursor: pointer;
   box-shadow: 0px 0 8px rgba(96, 96, 96, 0.721);
   transition: 0.09s;
+}
+
+.scroll-box-mobile{
+  overflow: hidden;
 }
 
 
@@ -739,6 +766,7 @@ main::-webkit-scrollbar-track {
 .pay .order{
   height: auto;
   max-height: 40%;
+  overflow-y: auto;
 }
 
 .pay .total-taxa{
@@ -746,7 +774,7 @@ main::-webkit-scrollbar-track {
   gap: 0.1rem;
 }
 
-.pay .order-item:hover .trash{
+.desktop .pay .order-item:hover .trash{
   display: none;
 }
 
@@ -793,7 +821,7 @@ main::-webkit-scrollbar-track {
   right: 0.8rem;
 }
 
-.payment-item:hover{
+.desktop .payment-item:hover{
   background-color: #ebebeb;
 }
 
@@ -810,4 +838,242 @@ main::-webkit-scrollbar-track {
   background-color: #ffb800;
   color: white;
   font-size: 18px;
+}
+
+
+
+/* Área Mobile */
+
+/* @media (max-width: 720px){ */
+  .mobile h1{
+    font-size: 28px;
+  }
+
+  .mobile aside{
+    display: none;
+    width: 100%;
+  }
+  
+  .mobile main{
+    margin: 0;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .mobile .topo{
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+  }
+
+  .mobile .topo .topo-mobile{
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    padding: 0 0.3rem 1rem;
+  }
+
+  .mobile .topo .topo-mobile span{
+    display: flex;
+    width: 35px;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 3.3rem;
+    font-size: 22px;
+    border-radius: 8px;
+    color: #5c5c5c;
+  }
+
+  .mobile .topo .topo-mobile p{
+    display: none;
+    width: 17px;
+    height: 17px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: -3px;
+    top: -5px;
+    background-color: #ffb800;
+    border: solid 2px #ebebeb;
+    font-size: 12px;
+    color: white;
+    border-radius: 50%;
+    font-weight: 500;
+    padding: 0.55rem;
+  }
+
+  .mobile .avatar-mobile{
+    width: 35px;
+    height: 35px;
+    display: flex;
+    margin-right: 0;
+    margin-left: auto;
+    position: absolute;
+    right: 0;
+  }
+
+  .mobile .avatar{
+    width: 35px;
+    height: 35px;
+  }
+
+  .mobile .form-pesq{
+    width: 100%;
+  }
+
+  .mobile .scroll-box-mobile{
+    display: inline;
+    padding: 0.5rem;
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+    min-height: 300px;
+  }
+
+  .mobile .scroll-box-mobile-cat{
+    display: inline;
+    padding: 0.3rem;
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+    min-height: 100px;
+  }
+
+  .mobile .recent, 
+  .mobile .popular{
+    width: 250%;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .mobile .category{
+    justify-content: flex-start;
+    gap: 1rem;
+    width: 190%;
+    height: auto;
+  }
+
+  .mobile .cat-item{
+    padding: 0.5rem 1rem;
+    width: 110px;
+    height: 80px;
+    gap: 0;
+  }
+
+  .mobile .cat-item img{
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobile .cat-item p{
+    font-size: 13px;
+  }
+
+  .mobile .item{
+    width: 70%;
+  }
+
+  .mobile .scroll-box-mobile-cat::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile .scroll-box-mobile::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile main::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .mobile .profile-car{
+    display: none;
+    width: 100%;
+    padding: 1rem;
+    background-color: white;
+  }
+
+
+  .mobile .profile{
+    padding: 0 0 0.5rem;
+    color: #5c5c5c;
+  }
+
+  .mobile #back-home{
+    display: flex;
+    
+  }
+
+  .mobile .avatar{
+    display: none;
+  }
+
+  .mobile .profile-car::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile .trash{
+    display: flex;
+  }
+
+
+  /* Área feedback */
+
+  .mobile .feedbacks{
+    padding: 1rem;
+  }
+
+  .mobile .pay{
+    width: 100%;
+  }
+  
+
+  /* Área active */
+
+  .mobile .menu-lateral li:active{
+    background-color: #ebebeb;
+  }
+
+
+  .mobile .home .menu-home:active{
+    background-color: #e6a602;
+  }
+
+  .mobile .form-pesq button:active{
+    background-color: #f5ce6d;
+    color: white;
+  }
+
+  .mobile .banner img:active{
+    cursor: pointer;
+    box-shadow: 0px 0 20px rgba(127, 127, 127, 0.584);
+    transition: 0.25s;
+  }
+
+  .mobile .cat-item:active{
+    cursor: pointer;
+    box-shadow: 0px 0 11px rgba(127, 127, 127, 0.584);
+    transition: 0.25s;
+  }
+
+  .mobile .item:active{
+    cursor: pointer;
+    box-shadow: 0px 0 11px rgba(127, 127, 127, 0.584);
+    transition: 0.25s;
+  }
+
+  .mobile .add:active{
+    background-color: #e6a602;
+  }
+/* } */
+
+
+@media (min-width: 610px){
+  .mobile .category{
+    justify-content: space-between;
+    gap: 0;
+    width: 100%;
+  }
 }

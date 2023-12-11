@@ -147,7 +147,7 @@ main::-webkit-scrollbar-track {
   justify-content: space-between;
 }
 
-#abrir-car{
+.desktop #abrir-car{
   display: none;
 }
 
@@ -406,7 +406,7 @@ main::-webkit-scrollbar-track {
   transition: background 0.1s ease;
 }
 
-#back-home{
+.desktop #back-home{
   display: none;
   width: 35px;
   height: 35px;
@@ -857,7 +857,7 @@ main::-webkit-scrollbar-track {
   .mobile main{
     margin: 0;
     width: 100%;
-    padding: 1.5rem;
+    padding: 0.9rem;
   }
 
   .mobile .topo{
@@ -874,7 +874,7 @@ main::-webkit-scrollbar-track {
     padding: 0 0.3rem 1rem;
   }
 
-  .mobile .topo .topo-mobile span{
+  .mobile .topo .topo-mobile #abrir-car{
     display: flex;
     width: 35px;
     height: 35px;

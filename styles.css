@@ -1051,6 +1051,10 @@ main::-webkit-scrollbar-track {
   min-height: 17%;
 }
 
+.mobile .check{
+  margin-bottom: 5%;
+}
+
 
 /* Área active */
 

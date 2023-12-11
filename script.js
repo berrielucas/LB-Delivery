@@ -287,12 +287,13 @@ buttons_fav.forEach(function(button_fav) {
 });
 
 
+
 const btn_pay = document.querySelector('.check');
 
 btn_pay.addEventListener('click', function(){
     const cupom = document.querySelector('#cupom').value;
     const labelErro = document.querySelector('.erro');
-    if (cupom.length>0&&cupom!='ILucas'){
+    if (cupom.length>0&&cupom!='LBOFF50'){
         labelErro.style.display = 'flex';
     }else{
         containerPay.classList.add('active');
@@ -311,7 +312,7 @@ btn_pay.addEventListener('click', function(){
         
         
     
-        if (cupom == "ILucas"){
+        if (cupom == "LBOFF50"){
             desconto = true;
             let valorTotalPay = document.querySelector('.pay').querySelector('.total-taxa').querySelector('.valor-total').querySelector('span');
             let valorDiscoutPay = document.querySelector('.pay').querySelector('.total-taxa').querySelector('.valor-discount').querySelector('span');
@@ -328,6 +329,9 @@ btn_pay.addEventListener('click', function(){
     }
     
 });
+
+
+
 
 const btn_fechar = document.querySelector('#fechar-pay');
 
@@ -358,6 +362,7 @@ btn_fechar.addEventListener('click', function(){
 
     listPedido = document.querySelector('.note').querySelectorAll('.order-item');
 });
+
 
 
 

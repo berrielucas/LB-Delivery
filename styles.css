@@ -17,6 +17,7 @@ h2{
 h1{
   font-weight: 500;
 }
+
 /* Menu Lateral */
 
 aside {
@@ -230,10 +231,10 @@ main::-webkit-scrollbar-track {
   align-items: center;
   justify-content: center;
   background-color: white;
-  width: 133px;
-  height: 133px;
+  width: 15%;
+  height: 120px;
   border-radius: 20px;
-  gap: 10px;
+  gap: 8px;
 }
 
 .cat-item img{
@@ -252,13 +253,25 @@ main::-webkit-scrollbar-track {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-height: 300px;
+}
+
+.desktop .scroll-box-mobile{
+  min-height: 320px;
+  padding: 0.5rem;
+}
+
+.desktop .scroll-box-mobile-cat{
+  padding: 0.3rem;
+  width: 100%;
+  min-height: 140px;
 }
 
 .item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 250px;
+  width: 31%;
   height: auto;
   padding: 1rem;
   border-radius: 15px;
@@ -408,12 +421,11 @@ main::-webkit-scrollbar-track {
 
 .desktop #back-home{
   display: none;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  font-size: 21px;
 }
 
 .desktop .icons span:hover{
@@ -854,7 +866,7 @@ main::-webkit-scrollbar-track {
 .mobile main{
   margin: 0;
   width: 100%;
-  padding: 0.9rem;
+  padding: 0.5rem;
   height: auto;
 }
 
@@ -869,7 +881,7 @@ main::-webkit-scrollbar-track {
   position: relative;
   align-items: center;
   width: 100%;
-  padding: 0 0.3rem 1rem;
+  padding: 0 0.2rem 1rem;
 }
 
 .mobile .topo .topo-mobile #abrir-car{
@@ -910,7 +922,7 @@ main::-webkit-scrollbar-track {
   margin-right: 0;
   margin-left: auto;
   position: absolute;
-  right: 0;
+  right: 0.2rem;
 }
 
 .mobile .avatar{
@@ -991,6 +1003,7 @@ main::-webkit-scrollbar-track {
   width: 100%;
   padding: 1rem;
   background-color: white;
+  gap: 0.5rem;
 }
 
 
@@ -1000,6 +1013,7 @@ main::-webkit-scrollbar-track {
 }
 
 .mobile #back-home{
+  font-size: 20px;
   display: flex;
   
 }
@@ -1020,11 +1034,21 @@ main::-webkit-scrollbar-track {
 /* Área feedback */
 
 .mobile .feedbacks{
-  padding: 1rem;
+  position: fixed;
+  overflow: hidden;
+  align-items: normal;
+  height: 100%;
+  padding: 0.5rem;
 }
 
 .mobile .pay{
   width: 100%;
+  margin-top: 10%;
+  max-height: 70vh;
+}
+
+.mobile .pay .order{
+  min-height: 17%;
 }
 
 

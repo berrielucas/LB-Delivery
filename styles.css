@@ -858,6 +858,7 @@ main::-webkit-scrollbar-track {
     margin: 0;
     width: 100%;
     padding: 0.9rem;
+    height: auto;
   }
 
   .mobile .topo{
